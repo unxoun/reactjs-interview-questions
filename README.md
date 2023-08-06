@@ -395,116 +395,45 @@
     
 2.  ### What are the major features of React?
 
-    The major features of React are:
-
-    - Uses **JSX** syntax, a syntax extension of JS that allows developers to write HTML in their JS code.
-    - It uses **Virtual DOM** instead of Real DOM considering that Real DOM manipulations are expensive.
-    - Supports **server-side rendering** which is useful for Search Engine Optimizations(SEO).
-    - Follows **Unidirectional or one-way** data flow or data binding.
-    - Uses **reusable/composable** UI components to develop the view.
+    - JSX  
+    - Virtual DOM  
+    - Server-Side Rendering  
+    - Unidirectional Data Flow    
+    - Reusable Component  
+    - Composable Component  
 
     **[⬆ Back to Top](#table-of-contents)**
 
 3.  ### What is JSX?
 
-    _JSX_ stands for _JavaScript XML_ and it is an XML-like syntax extension to ECMAScript. Basically it just provides the syntactic sugar for the `React.createElement(type, props, ...children)` function, giving us expressiveness of JavaScript along with HTML like template syntax.
-
-    In the example below, the text inside `<h1>` tag is returned as JavaScript function to the render function.
-
-    ```jsx harmony
-    export default function App() {
-      return (
-          <h1 className="greeting">{"Hello, this is a JSX Code!"}</h1>
-      );
-    }
-    ```
-    If you don't use JSX syntax then the respective JavaScript code should be written as below,
-
-    ```javascript
-    import { createElement } from 'react';
-
-    export default function App() {
-      return createElement(
-        'h1',
-        { className: 'greeting' },
-        'Hello, this is a JSX Code!'
-      );
-    }
-    ```
-
-     <details><summary><b>See Class</b></summary>
-     <p>
-
-    ```jsx harmony
-    class App extends React.Component {
-      render() {
-        return (
-            <h1 className="greeting">{"Hello, this is a JSX Code!"}</h1>
-        );
-      }
-    }
-    ```
-
-     </p>
-     </details>
-
-    **Note:** JSX is stricter than HTML
+    - JavaScript XML  
+    - XML-like syntax extension to ECMAScript  
+    - `React.createElement` syntatic suger  
+    - To write HTML like syntax within JS.
+    - stricter than HTML
 
     **[⬆ Back to Top](#table-of-contents)**
 
-4.  ### What is the difference between Element and Component?
+5.  ### What is the difference between Element and Component?
 
-    An _Element_ is a plain object describing what you want to appear on the screen in terms of the DOM nodes or other components. _Elements_ can contain other _Elements_ in their props. Creating a React element is cheap. Once an element is created, it cannot be mutated.
+    **Element**  
+    `Element` -> `Object` -> ReactDOM.render() -> `DOM`  
+    An Element is a Plain Object  
+    Creating a React element is cheap  
+    Imutable  
+    const anElement = React.createElement("div", {id:"login"}, "Login Here")  
+    const anElement = <div id="login">Login Here</div>  
+    returns object {type:'div', props:{id:'login', childer:'Login Here'}}  
+    renders to DOM by `ReactDOM.render`  
 
-    The JavaScript representation(Without JSX) of React Element would be as follows:
-
-    ```javascript
-    const element = React.createElement("div", { id: "login-btn" }, "Login");
-    ```
-    and this element can be simiplified using JSX
-
-    ```html
-      <div id="login-btn">Login</div>
-    ```
-
-    The above `React.createElement()` function returns an object as below:
-
-    ```
-    {
-      type: 'div',
-      props: {
-        children: 'Login',
-        id: 'login-btn'
-      }
-    }
-    ```
-
-    Finally, this element renders to the DOM using `ReactDOM.render()`.
-
-    Whereas a **component** can be declared in several different ways. It can be a class with a `render()` method or it can be defined as a function. In either case, it takes props as an input, and returns a JSX tree as the output:
-
-    ```javascript
-    const Button = ({ handleLogin }) => (
-      <div id={"login-btn"} onClick={handleLogin}>
-        Login
-      </div>
-    );
-    ```
-
-    Then JSX gets transpiled to a `React.createElement()` function tree:
-
-    ```javascript
-    const Button = ({ handleLogin }) =>
-      React.createElement(
-        "div",
-        { id: "login-btn", onClick: handleLogin },
-        "Login"
-      );
-    ```
+    **Component**
+    A Class with a "render()" method  
+    A function.  
+    Takes props as an input, and returns a Elements tree as the output.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-5.  ### How to create components in React?
+7.  ### How to create components in React?
 
     Components are the building blocks of creating User Interfaces(UI) in React. There are two possible ways to create a component.
 
@@ -528,7 +457,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-6.  ### When to use a Class Component over a Function Component?
+8.  ### When to use a Class Component over a Function Component?
 
     After the addition of Hooks(i.e. React 16.8 onwards) it is always recommended to use Function components over Class components  in React. Because you could use state, lifecycle methods and other features that were only available in class component present in function component too. 
     
@@ -554,7 +483,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-7.  ### What are Pure Components?
+9.  ### What are Pure Components?
 
     Pure components are the components which render the same output for the same state and props. In function components, you can achieve these pure components through memoized `React.memo()` API wrapping around the component. This API prevents unnecessary re-renders by comparing the previous props and new props using shallow comparison. So it will be helpful for performance optimizations. 
     
@@ -602,7 +531,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-8.  ### What is state in React?
+10.  ### What is state in React?
 
     _State_ of a component is an object that holds some information that may change over the lifetime of the component. The important point is whenever the state object changes, the component re-renders. It is always recommended to make our state as simple as possible and minimize the number of stateful components.
 
@@ -655,7 +584,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-9.  ### What are props in React?
+11.  ### What are props in React?
 
     _Props_ are inputs to components. They are single values or objects containing a set of values that are passed to components on creation similar to HTML-tag attributes. Here, the data is passed down from a parent component to a child component.
 
