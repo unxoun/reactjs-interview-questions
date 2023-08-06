@@ -459,27 +459,13 @@
 
 8.  ### When to use a Class Component over a Function Component?
 
-    After the addition of Hooks (React 16.8 onwards) it is always recommended to use Function components over Class components in React.
+    After the addition of Hooks (React 16.8 onwards) it is always recommended to use Function components over Class components in React.  
+    Reasons for Class components:  
+      No equivalents available  
+      - Error Boundaries 
+      - Old React versions "state" or "lifecycle methods"
 
-    But 2 reasons for Class components:  
-
-      1. No equivalents available - like **Error Boundaries**. 
-      2. Old React versions       - where "state" or "lifecycle methods" is needed.
-
-
-    **Note:** You can also use reusable [react error boundary](https://github.com/bvaughn/react-error-boundary) third-party component without writing any class. i.e, No need to use class components for Error boundaries.
-
-    The usage of Error boundaries from the above library is quite straight forward.
-
-    ```jsx
-    "use client";
-
-    import { ErrorBoundary } from "react-error-boundary";
-
-    <ErrorBoundary fallback={<div>Something went wrong</div>}>
-      <ExampleApplication />
-    </ErrorBoundary>
-    ```
+    NOTE: React Error Boundry third-party component is available to use in Function Components.
 
     **[⬆ Back to Top](#table-of-contents)**
 
