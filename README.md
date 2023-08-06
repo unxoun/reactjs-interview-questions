@@ -417,9 +417,9 @@
 5.  ### What is the difference between Element and Component?
 
     **Element**  
-    `Element` -> `Object` -> ReactDOM.render() -> `DOM`  
+    `Element` -> `Object` -> `ReactDOM.render()` -> `DOM`  
     An Element is a Plain Object  
-    Creating a React element is cheap  
+    Creating a React Element is cheap  
     Imutable  
     const anElement = React.createElement("div", {id:"login"}, "Login Here")  
     const anElement = <div id="login">Login Here</div>  
@@ -459,12 +459,12 @@
 
 8.  ### When to use a Class Component over a Function Component?
 
-    After the addition of Hooks(i.e. React 16.8 onwards) it is always recommended to use Function components over Class components  in React. Because you could use state, lifecycle methods and other features that were only available in class component present in function component too. 
-    
-    But even there are two reasons to use Class components over Function components.
+    After the addition of Hooks (React 16.8 onwards) it is always recommended to use Function components over Class components in React.
 
-      1. If you need a React functionality whose Function component equivalent is not present yet, like Error Boundaries. 
-      2. In older versions, If the component needs _state or lifecycle methods_ then you need to use class component.
+    But 2 reasons for Class components:  
+
+      1. No equivalents available - like **Error Boundaries**. 
+      2. Old React versions       - where "state" or "lifecycle methods" is needed.
 
 
     **Note:** You can also use reusable [react error boundary](https://github.com/bvaughn/react-error-boundary) third-party component without writing any class. i.e, No need to use class components for Error boundaries.
@@ -483,7 +483,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-9.  ### What are Pure Components?
+10.  ### What are Pure Components?
 
     Pure components are the components which render the same output for the same state and props. In function components, you can achieve these pure components through memoized `React.memo()` API wrapping around the component. This API prevents unnecessary re-renders by comparing the previous props and new props using shallow comparison. So it will be helpful for performance optimizations. 
     
@@ -531,7 +531,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-10.  ### What is state in React?
+11.  ### What is state in React?
 
     _State_ of a component is an object that holds some information that may change over the lifetime of the component. The important point is whenever the state object changes, the component re-renders. It is always recommended to make our state as simple as possible and minimize the number of stateful components.
 
