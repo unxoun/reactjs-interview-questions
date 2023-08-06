@@ -459,11 +459,12 @@
 
 8.  ### When to use a Class Component over a Function Component?
 
-    After the addition of Hooks (React 16.8 onwards) it is always recommended to use Function components over Class components in React.  
-    Reasons for Class components:  
-      No equivalents available  
-      - Error Boundaries 
-      - Old React versions "state" or "lifecycle methods"
+    Always recommended: Function components
+    (After Hook addition in React >=16.8)  
+    
+    Reasons for Class components: No equivalents available  
+    - Error Boundaries  
+    - Old React versions "state" or "lifecycle methods"  
 
     NOTE: React Error Boundry third-party component is available to use in Function Components.
 
@@ -471,7 +472,8 @@
 
 10.  ### What are Pure Components?
 
-    Pure components are the components which render the same output for the same state and props. In function components, you can achieve these pure components through memoized `React.memo()` API wrapping around the component. This API prevents unnecessary re-renders by comparing the previous props and new props using shallow comparison. So it will be helpful for performance optimizations. 
+Render same output for the same state and props.  
+In function components, you can achieve these pure components through memoized `React.memo()` API wrapping around the component. This API prevents unnecessary re-renders by comparing the previous props and new props using shallow comparison. So it will be helpful for performance optimizations. 
     
     But at the same time, it won't compare the previous state with the current state because function component itself prevents the unnecessary rendering by default when you set the same state again.
 
